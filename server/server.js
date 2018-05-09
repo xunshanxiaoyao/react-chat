@@ -38,7 +38,7 @@ app.get('/',function(req, res){
 })
 
 app.get('/data',function(req, res){
-	User.find({},function(err, doc){
+	User.findOne({},function(err, doc){
 		res.json(doc)
 	})
 	// res.json({

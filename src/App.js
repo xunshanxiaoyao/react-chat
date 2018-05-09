@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { addGun, removeGun, addGunAsync } from "./index.redux"
 
 const mapStatetoProps = (state) => {
-	return { num:state }
+	return { num:state.counter }
 }
 const actionCreators = { addGun, removeGun, addGunAsync }
 
