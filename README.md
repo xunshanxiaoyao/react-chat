@@ -5,8 +5,6 @@
 # 2. redux
     - 多个reducer 用combineReducers合并
 
-
-
 ### Proxy error: Could not proxy request /data from localhost:3000 to http://localhost:9093.
     - server服务没有启动
 
