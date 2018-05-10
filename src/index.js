@@ -27,8 +27,11 @@ ReactDom.render(
 			<BrowserRouter>
 				<div>
 					<AuthRoute />
-					<Route path='/login' component={Login}></Route>
-					<Route path='/register' component={Register}></Route>
+					<Switch>
+						<Route path='/login' component={Login}></Route>
+						<Route path='/register' component={Register}></Route>
+					</Switch>
+
 				</div>
 			</BrowserRouter>
 		</Provider>
