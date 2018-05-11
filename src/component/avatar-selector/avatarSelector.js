@@ -1,9 +1,14 @@
 
 import React from 'react'
 import { Grid, InputItem, WhiteSpace } from 'antd-mobile'
+import PropTypes from 'prop-types'
 
 
 class BossInfo extends React.Component{
+	static propType = {
+		selectAvatar: PropTypes.func.isRequired
+	}
+
 	constructor(props){
 		super(props)
 	}

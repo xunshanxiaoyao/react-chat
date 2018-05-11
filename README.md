@@ -2,6 +2,7 @@
     - Create-react-app 生成文件格式
        + create-react-app [name] 生成最基本的开发坏境
        + npm run eject 弹出配置文件
+       + propsType 父传子参数限制
 # 2. redux
     - 多个reducer 用combineReducers合并
 

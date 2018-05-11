@@ -1,9 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { NavBar,List,InputItem, WingBlank, WhiteSpace, Button, TextareaItem } from 'antd-mobile'
 
 import AvatarSelector from '../../component/avatar-selector/avatarSelector'
+import {update} from '../../redux/user.redux'
 
-
+@connect(
+	state=>state.user,
+	{update}
+)
 class BossInfo extends React.Component{
 	constructor(props){
 		super(props)
@@ -29,8 +35,11 @@ class BossInfo extends React.Component{
 	}
 
 	render(){
+		const path = this.props.location.pathname
+		const redirectTo = this.props.redirectTo
 		return (
 			<div>
+			{redirectTo && redirectTo !== path ? <Redirect to={this.props.redirectTo} /> : null}
 				<NavBar
 					mode="dark"
 				>BOSS完善信息</NavBar>
@@ -71,7 +80,12 @@ class BossInfo extends React.Component{
 				<WhiteSpace />
 				<WhiteSpace />
 				<WingBlank>
-					<Button type='primary'>完成</Button>
+					<Button
+						type='primary'
+						onClick={()=>{
+							this.props.update(this.state)
+						}}
+					>保存</Button>
 				</WingBlank>
 			</div>
 		)
