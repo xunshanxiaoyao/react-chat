@@ -5,9 +5,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import NavLinkBar from '../../component/navLinkBar/navLinkBar'
 import Boss from '../../component/boss/boss'
-function Genius(){
-	return <h2>Genius</h2>
-}
+import Genius from '../../component/genius/genius'
 
 function Msg(){
 	return <h2>Msg</h2>
