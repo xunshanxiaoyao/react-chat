@@ -30,6 +30,7 @@ class AuthRoute extends React.Component{
 					}
 				}
 			})
+
 		// 是否需要登录
 		// 现在的url login不需要跳转
 		// 用户的type
