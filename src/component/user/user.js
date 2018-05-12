@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Result, WhiteSpace, List, WingBlank, Button } from 'antd-mobile'
+import { Result, WhiteSpace, List, WingBlank, Button, Modal } from 'antd-mobile'
+import browserCookie from 'browser-cookies'
 
 
 @connect(
@@ -13,8 +14,14 @@ class User extends React.Component{
 	}
 
 	logoutCookie(){
-		alert('123')
-		console.log('logout')
+		const alert = Modal.alert
+		alert('注销','确定退出么？',[
+			{ text: '取消', onPress: () => console.log('cancel') },
+			{ text: '确认', onPress: () => {
+					browserCookie.erase('userId')
+			}}
+		])
+		// browserCookie.erase('userId')
 	}
 
 	render(){
