@@ -11,10 +11,5 @@
 
 ### mongo每次都需要 敲入 mongod --config /usr/local/etc/mongod.conf
 
-### plugins
-//        antd 样式问题
-//        "import",
-//        {
-//          "libraryName": "antd-mobile",
-//          "style": "css"
-//        },
+### 属性代理 反向继承
+

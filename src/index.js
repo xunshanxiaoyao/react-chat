@@ -11,13 +11,14 @@ import Register from './container/register/register'
 import BossInfo from './container/bossInfo/bossInfo'
 import GeniusInfo from './container/geniusInfo/geniusInfo'
 import Dashboard from './container/dashboard/dashboard'
+import Chat from './component/chat/chat'
 import reducers from './reducer'
 import './config'
 
 import './index.css'
 
 
-const reduxDevtools = window.devToolsExtension?window.devToolsExtension():()=>{}
+const reduxDevtools = window.devToolsExtension?window.devToolsExtension():f=>f
 
 const store = createStore(reducers, compose(
 	applyMiddleware(thunk),
@@ -35,6 +36,7 @@ ReactDom.render(
 						<Route path='/register' component={Register}></Route>
 						<Route path='/bossInfo' component={BossInfo}></Route>
 						<Route path='/geniusInfo' component={GeniusInfo}></Route>
+						<Route path='/chat/:user' component={Chat}></Route>
 						<Route component={Dashboard}></Route>
 					</Switch>
 

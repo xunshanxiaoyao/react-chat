@@ -4,6 +4,9 @@ const utils = require('utility')
 
 const model = require('./model')
 const User = model.getModel('user')
+const Chat = model.getModel('chat')
+
+// Chat.remove({},function(e,d){})
 
 const _filter = { 'pwd': 0, '__v':0 }
 
@@ -86,6 +89,16 @@ Router.get('/info',function(req, res){
 				code: 0,
 				data: doc
 			})
+		}
+	})
+})
+
+Router.get('/getMsgList', function(req,res){
+	// const user = req.cookies.user
+	// '$or':[{from: user, to: user}]
+	Chat.find({},function(err, doc){
+		if(!err){
+			return res.json({code: 0, msgs: doc})
 		}
 	})
 })
