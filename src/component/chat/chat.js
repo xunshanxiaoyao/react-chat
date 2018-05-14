@@ -109,7 +109,7 @@ class Chat extends React.Component{
 									>😃</span>
 									<span onClick={()=>{
 										this.handleSubmit()
-										this.setState({showEmoji: !this.state.showEmoji})
+										this.setState({showEmoji: false})
 									}}>发送</span>
 								</div>
 							}
