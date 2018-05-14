@@ -20,7 +20,7 @@ function Msg(){
 class Dashboard extends React.Component{
 
 	componentDidMount(){
-		if(!this.props.chat.chatmsg.length) {
+		if(!this.props.chat.chatmsg.length && !this.props.chat.socketLink) {
 			this.props.getMsgList()
 			this.props.getRecvMsg()
 		}
