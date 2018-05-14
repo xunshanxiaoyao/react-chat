@@ -14,6 +14,7 @@ io.on('connection',function(socker){
 	socker.on('sendMsg', function(data){
 
 		const {from, to, msg} = data
+		console.log({from, to, msg})
 		const chatId = [from,to].sort().join('_')
 
 		Chat.create({chatId,from,to,content:msg},function(err, doc){

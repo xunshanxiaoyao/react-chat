@@ -22,7 +22,7 @@ class CardUserList extends React.Component{
 					<WhiteSpace />
 					{this.props.userList.map(v=>(
 						v.avatar?(
-						<Card
+							<Card
 							key={v._id}
 							onClick={()=>this.handleClick(v)}
 						>
@@ -35,10 +35,11 @@ class CardUserList extends React.Component{
 							{v.type === 'boss' ? <div>公司:{v.company}</div>:null}
 							{v.type === 'boss' ? <div>薪资:{v.money}</div>:null}
 							{v.desc.split('\n').map(s=>(
-								<div key={v._id}>{s}</div>
+								<div key={s}>{s}</div>
 							))}
 							</Body>
-						</Card>):null
+						</Card>
+						):null
 					))}
 				</WingBlank>
 			</div>

@@ -14,10 +14,15 @@
 .fixd-header.am-navbar{
     position: fixed;
     top: 0;
-    width: 100%
+    width: 100%;
+    z-index: 2;
 }
 .page-content{
     padding: 45px 5px;
+}
+
+#chat-page{
+    padding: 50px 0 60px;
 }
 
 #chat-page .chat-me .am-list-extra{
@@ -30,8 +35,8 @@
 }
 
 .stick-footer{
-   z-index: 10;
-    position: absolute;
+    z-index: 10;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
