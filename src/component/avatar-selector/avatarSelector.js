@@ -9,9 +9,9 @@ class BossInfo extends React.Component{
 		selectAvatar: PropTypes.func.isRequired
 	}
 
-	constructor(props){
-		super(props)
-	}
+	// constructor(props){
+	// 	super(props)
+	// }
 
 	render(){
 		const avatarList = 'boy,girl,man,woman,bull,chick,crab,hedgehog,hippopotamus,koala,lemur,pig,tiger,whale,zebra'

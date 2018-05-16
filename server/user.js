@@ -109,6 +109,21 @@ Router.get('/getMsgList', function(req,res){
 	})
 })
 
+Router.post('/readmsg', function(req, res){
+	const userId = req.cookies.userId
+	const { from } = req.body
+	Chat.update(
+		{from, to: userId},
+		{'$set':{read: true}},
+		{'multi': true},
+		function(err, doc){
+			if(!err){
+				return res.json({code: 0, num: doc.nModified})
+			}
+			return res.json({code: 1,msg:'修改失败'})
+	})
+})
+
 function md5Pwd(pwd){
 	const salt = 'lvYanBin_0309_pwd!!!'
 	return utils.md5(utils.md5(pwd+salt));
