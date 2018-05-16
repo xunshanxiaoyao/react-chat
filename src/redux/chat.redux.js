@@ -35,7 +35,7 @@ export function chat(state=initState,action){
 			}
 		case MSG_READ:
 			const { from ,num } = action.payload.data
-			return{
+			return {
 				...state,
 				chatmsg: state.chatmsg.map(v=>{
 					v.read = from === v.from ? true : v.read

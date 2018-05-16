@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { NavBar} from 'antd-mobile'
 import { Switch, Route } from 'react-router-dom'
+import QueueAnim from 'rc-queue-anim'
 
 import NavLinkBar from '../../component/navLinkBar/navLinkBar'
 import Boss from '../../component/boss/boss'
@@ -58,6 +59,8 @@ class Dashboard extends React.Component{
 				component: User,
 			}
 		]
+
+		const page = navList.find(v=>v.path === pathname)
 		return (
 			<div>
 				<NavBar
@@ -65,11 +68,9 @@ class Dashboard extends React.Component{
 					mode="dark"
 				>{navList.find(v=>v.path===pathname).title}</NavBar>
 				<div style={{marginTop: 45}}>
-					<Switch>
-						{navList.map(v=>(
-							<Route key={v.path} path={v.path} component={v.component}></Route>
-						))}
-					</Switch>
+					<QueueAnim type='scaleX' duration={100}>
+						<Route key={page.path} path={page.path} component={page.component}></Route>
+					</QueueAnim>
 				</div>
 				<NavLinkBar data={navList}></NavLinkBar>
 			</div>
