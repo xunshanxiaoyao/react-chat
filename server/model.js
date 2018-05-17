@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 // 链接mongo 使用imooc集合
-const DB_URL = 'mongodb://localhost:27017/imooc-chat';
+const DB_URL = 'mongodb://127.0.0.1:19999/imooc-chat';
 mongoose.connect(DB_URL)
 
 const models = {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import io from 'socket.io-client'
 
-const socket = io('ws://localhost:9093')
+const socket = io('ws://140.143.129.249')
 
 
 const MSG_LIST = 'MSG_LIST' // 获取列表

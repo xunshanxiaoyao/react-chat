@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+const path = require('path')
 
 const app = express();
 
@@ -30,7 +31,14 @@ const userRouter = require('./user')
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use('/user',userRouter)
-
-server.listen(9093,function(){
-	console.log('Node app start at port 9093');
+app.use(function(req, res, next){
+	if(req.url.startsWith('/user/') || req.url.startsWith('/static/')){
+		app.use('/static/',express.static(path.resolve('/build')))
+		return next()
+	}
+	return res.sendFile(path.resolve('../build/index.html'))
+})
+app.use('/',express.static(path.resolve('../build/')))
+server.listen(6730,function(){
+	console.log('Node app start at port 6730');
 })
