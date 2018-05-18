@@ -3,7 +3,6 @@ import io from 'socket.io-client'
 
 const socket = io('ws://140.143.129.249')
 
-
 const MSG_LIST = 'MSG_LIST' // 获取列表
 const MSG_RECV = 'MSG_RECV' // 读取信息
 const MSG_READ = 'MSG_READ' // 标示已读
@@ -34,7 +33,7 @@ export function chat(state=initState,action){
 				unread: state.unread+n
 			}
 		case MSG_READ:
-			const { from ,num } = action.payload.data
+			const { from ,num } = action.payload
 			return {
 				...state,
 				chatmsg: state.chatmsg.map(v=>{
